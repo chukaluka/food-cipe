@@ -21,17 +21,24 @@ const UserName = ({ navigation }) => {
         Keyboard.dismiss();
         }}>
     <View className='flex-1 justify-center items-center bg-yellow-400'>
+
+      {/* Flip animation */}
       <Animated.View entering={FlipInEasyY.duration(500).delay(400).easing(Easing.ease)} style={styles.div} className='w-4/5 p-6 bg-white rounded-2xl shadow-2xl'>
+
+        {/* user logo */}
         <View className='justify-center items-center pb-7'>
             <FontAwesome5 name="user-circle" size={50} color="#8f3903" />
         </View>
         
+        {/* User enters name */}
         <TextInput
           className='h-12 border rounded-lg mb-4 px-4'
           placeholder="What's Your Name?"
           onChangeText={(text) => setName(text)}
           value={name}
         />
+
+        {/* Button */}
         <TouchableOpacity onPress={pressNavigate} className='bg-yellow-700 p-4 rounded-lg'>
           <Text className='text-white font-bold text-center'>Enter</Text>
         </TouchableOpacity>
