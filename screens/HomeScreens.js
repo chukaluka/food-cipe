@@ -1,14 +1,14 @@
 import { View, Text, ScrollView, Image } from 'react-native'
 import React from 'react'
-import { useRoute } from '@react-navigation/native';
+
 import { StatusBar } from 'expo-status-bar';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Routines from '../components/routines';
 
 
-const HomeScreens = () => {
+const HomeScreens = ({ route }) => {
   // Collects and Displays the username from the username.js to homescreen.js
-    const route = useRoute();
+
     const { name } = route.params || {};
 
   return (
@@ -37,7 +37,9 @@ const HomeScreens = () => {
         </View>
 
         {/* Routines components from routines.js*/}
-        <Routines/>
+        <View>
+          <Routines/> 
+        </View>
        
       </ScrollView>
     </View>

@@ -28,7 +28,7 @@ const WelcomeScreen = ({navigation}) => {
       <Animated.View className='bg-white/20 rounded-full' style={{padding: ring2padding}}>
         <Animated.View className='bg-white/20 rounded-full' style={{padding: ring1padding}}>
             <Image source={require('../assets/images/welcome2.png')}
-            style={{width: hp(28), height: hp(20)}} />
+            style={{width: wp(60), height: hp(20)}} />
         </Animated.View>
       </Animated.View>
 
