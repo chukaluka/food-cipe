@@ -7,9 +7,14 @@ import { useNavigation } from '@react-navigation/native';
 const Routines = () => {
     const navigation = useNavigation();
 
-    // function that handles when the image is clicked. It then navigates to the RoutinesPage and takes the image along with it
-    const handleImageClick = (imageSource) => {
-        navigation.navigate('RoutinesPage', { imageSource});
+    const handleImageClickBreakfast = (imageSource) => {
+        navigation.navigate('BreakfastPage', { imageSource});
+      };
+    const handleImageClickLunch = (imageSource) => {
+        navigation.navigate('LunchPage', { imageSource});
+      };
+    const handleImageClickDinner = (imageSource) => {
+        navigation.navigate('DinnerPage', { imageSource});
       };
 
   return (
@@ -19,7 +24,7 @@ const Routines = () => {
             showsVerticalScrollIndicator={false}
         >
             {/* The called onpress function which provides the breakfast image source which will navigate to the RoutinesPage and show only the breakfast image, the breakfast image shown on this page and the breakfast text */}
-            <TouchableOpacity onPress={() => handleImageClick(require('../assets/images/Breakfast.jpg'))}>
+            <TouchableOpacity onPress={() => handleImageClickBreakfast(require('../assets/images/Breakfast.jpg'))}>
                 <Image 
                     source={require('../assets/images/Breakfast.jpg')}
                     style={{width: wp(80), height: hp(20), borderRadius: 10}}
@@ -32,7 +37,7 @@ const Routines = () => {
             </TouchableOpacity>
 
               {/* The called onpress function which provides the lunch image source which will navigate to the RoutinesPage and show only the lunch image, the lunch image shown on this page and the lunch text */}
-            <TouchableOpacity className='mt-4' onPress={() => handleImageClick(require('../assets/images/lunch.jpg'))}>
+            <TouchableOpacity className='mt-4' onPress={() => handleImageClickLunch(require('../assets/images/lunch.jpg'))}>
                 <Image 
                     source={require('../assets/images/lunch.jpg')}
                     style={{width: wp(80), height: hp(20), borderRadius: 10}}
@@ -45,7 +50,7 @@ const Routines = () => {
             </TouchableOpacity>
 
               {/* The called onpress function which provides the dinner image source which will navigate to the RoutinesPage and show only the dinner image, the dinner image shown on this page and the dinner text */}
-            <TouchableOpacity className='mt-4' onPress={() => handleImageClick(require('../assets/images/dinner.jpg'))}>
+            <TouchableOpacity className='mt-4' onPress={() => handleImageClickDinner(require('../assets/images/dinner.jpg'))}>
                 <Image 
                     source={require('../assets/images/dinner.jpg')}
                     style={{width: wp(80), height: hp(20), borderRadius: 10}}
